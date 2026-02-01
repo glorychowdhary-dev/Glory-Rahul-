@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>💖 For Rahul 💖</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:linear-gradient(#ffe6f0,#fff);
+  text-align:center;
+}
+
+.page{
+  display:none;
+  min-height:100vh;
+  padding:30px;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+}
+
+.page.active{
+  display:flex;
+}
+
+h1{
+  color:#ff2f6e;
+  font-size:36px;
+  animation:heartbeat 1.3s infinite;
+}
+
+@keyframes heartbeat{
+  0%,100%{transform:scale(1);}
+  50%{transform:scale(1.15);}
+}
+
+p{
+  font-size:22px;
+  color:#444;
+  max-width:320px;
+}
+
+button{
+  background:#ff2f6e;
+  color:white;
+  border:none;
+  padding:16px 35px;
+  font-size:22px;
+  border-radius:35px;
+  cursor:pointer;
+  margin-top:25px;
+}
+
+.card{
+  background:white;
+  border-radius:25px;
+  padding:15px;
+  margin:20px auto;
+  max-width:350px;
+  box-shadow:0 12px 25px rgba(0,0,0,0.15);
+}
+
+img{
+  width:100%;
+  border-radius:20px;
+}
+
+.caption{
+  margin-top:10px;
+  font-size:18px;
+  color:#ff2f6e;
+}
+
+/* 💖 HEART POP */
+.heart{
+  font-size:70px;
+  cursor:pointer;
+  animation:pulse 1.2s infinite;
+}
+
+@keyframes pulse{
+  0%{transform:scale(1);}
+  50%{transform:scale(1.3);}
+  100%{transform:scale(1);}
+}
+
+/* 💘 YES / NO */
+.buttons{
+  position:relative;
+  width:300px;
+  height:160px;
+}
+
+#yes{
+  left:50%;
+  transform:translateX(-50%);
+  position:absolute;
+}
+
+#no{
+  position:absolute;
+  top:70px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#ddd;
+  color:#555;
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🌸 PAGE 1 INTRO -->
+<div class="page active">
+  <h1>💖 Hello Rahul, My Sweetheart 💖</h1>
+  <p>
+    Hey Rahul… 💕  
+    From a simple hello to becoming  
+    the most special person in my life 💞  
+    Here’s a small surprise made only for you 😘
+  </p>
+  <button onclick="nextPage()">🎁 SURPRISE 🎁</button>
+</div>
+
+<!-- 🌸 PAGE 2 MEMORIES -->
+<div class="page">
+  <h1>💞 Our Little Love Story 💞</h1>
+
+  <p>
+    We started as strangers…  
+    slowly became friends…  
+    and before we knew it,  
+    our hearts chose each other 💖
+  </p>
+
+  <div class="card"><img src="pic1.jpg"><div class="caption">✨ Our first pic when we met</div></div>
+  <div class="card"><img src="pic2.jpg"><div class="caption">🚗 Our first car drive</div></div>
+  <div class="card"><img src="pic3.jpg"><div class="caption">💍 Like a couple at our first marriage</div></div>
+  <div class="card"><img src="pic4.jpg"><div class="caption">🎬 Our first movie date</div></div>
+  <div class="card"><img src="pic5.jpg"><div class="caption">📱 Our first romantic video call</div></div>
+  <div class="card"><img src="pic6.jpg"><div class="caption">🧸 Little us</div></div>
+  <div class="card"><img src="pic7.jpg"><div class="caption">😜 First time when I won against you</div></div>
+
+  <p>Pop the heart Rahul 💖</p>
+  <div class="heart" onclick="nextPage()">💖</div>
+</div>
+
+<!-- 🌸 PAGE 3 VALENTINE -->
+<div class="page">
+  <h1>💘 Rahul, Will You Be My Valentine? 💘</h1>
+
+  <p>
+    I don’t need perfect moments…  
+    I just need **you**, Rahul,  
+    in every moment of my life 💞
+  </p>
+
+  <div class="buttons">
+    <button id="yes" onclick="yesClicked()">YES 💝</button>
+    <button id="no" onmouseover="runAway()">NO 🙈</button>
+  </div>
+</div>
+
+<script>
+let page = 0;
+const pages = document.querySelectorAll(".page");
+
+function nextPage(){
+  pages[page].classList.remove("active");
+  page++;
+  pages[page].classList.add("active");
+}
+
+function runAway(){
+  const no = document.getElementById("no");
+  no.style.left = Math.random()*200 + "px";
+  no.style.top = Math.random()*120 + "px";
+}
+
+function yesClicked(){
+  document.body.innerHTML = `
+  <div style="height:100vh;display:flex;flex-direction:column;
+  justify-content:center;align-items:center;
+  background:linear-gradient(#ffe6f0,#fff);">
+    <h1 style="color:#ff2f6e;">💖 Yayyy Rahul 💖</h1>
+    <p style="font-size:22px;color:#444;max-width:300px;">
+      You chose me 🥹💞  
+      And I promise to choose you,  
+      every single day 🌹
+    </p>
+    <div style="font-size:40px;">💖 💕 💘 💞</div>
+  </div>`;
+}
+</script>
+
+</body>
+</html>
